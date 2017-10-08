@@ -22,6 +22,7 @@ public class UserActionBolt implements IBasicBolt {
 	public void execute(Tuple input, BasicOutputCollector collector) {
 		String word = input.getString(0);
 		log.info("bolt get message is: "+word);
+		log.info("bolt get message is master: "+word);
 		JedisClusterUtil.setex(word, 120, "value:"+word);
 	}
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
