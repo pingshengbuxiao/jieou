@@ -26,7 +26,6 @@ public class UserActionBolt implements IBasicBolt {
 		log.info("bolt get message is master: "+word);
 		
 		log.info("we got a bug "+word);
-		log.info("we got a bug "+word);
 
 		
 		JedisClusterUtil.setex(word, 120, "value:"+word);
